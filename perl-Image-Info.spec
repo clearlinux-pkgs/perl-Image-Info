@@ -4,32 +4,33 @@
 #
 Name     : perl-Image-Info
 Version  : 1.41
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libi/libimage-info-perl/libimage-info-perl_1.41-1.debian.tar.xz
 Summary  : 'Extract meta information from image files'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Image-Info-man
+BuildRequires : buildreq-cpan
 
 %description
 This Perl extension allows you to extract meta information from various
 types of image files. The following file formats are supported:
 
-%package man
-Summary: man components for the perl-Image-Info package.
-Group: Default
+%package dev
+Summary: dev components for the perl-Image-Info package.
+Group: Development
+Provides: perl-Image-Info-devel = %{version}-%{release}
 
-%description man
-man components for the perl-Image-Info package.
+%description dev
+dev components for the perl-Image-Info package.
 
 
 %prep
-tar -xf %{SOURCE1}
-cd ..
 %setup -q -n Image-Info-1.41
-mkdir -p %{_topdir}/BUILD/Image-Info-1.41/deblicense/
+cd ..
+%setup -q -T -D -n Image-Info-1.41 -b 1
+mkdir -p deblicense/
 mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Image-Info-1.41/deblicense/
 
 %build
@@ -55,9 +56,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -66,28 +67,28 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Bundle/Image/Info/Everything.pm
-/usr/lib/perl5/site_perl/5.26.1/Bundle/Image/Info/PNG.pm
-/usr/lib/perl5/site_perl/5.26.1/Bundle/Image/Info/SVG.pm
-/usr/lib/perl5/site_perl/5.26.1/Bundle/Image/Info/XBM.pm
-/usr/lib/perl5/site_perl/5.26.1/Bundle/Image/Info/XPM.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/BMP.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/GIF.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/ICO.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/JPEG.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/PNG.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/PPM.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/SVG.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/SVG/XMLLibXMLReader.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/SVG/XMLSimple.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/TIFF.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/WBMP.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/XBM.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/Info/XPM.pm
-/usr/lib/perl5/site_perl/5.26.1/Image/TIFF.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Bundle/Image/Info/Everything.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Bundle/Image/Info/PNG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Bundle/Image/Info/SVG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Bundle/Image/Info/XBM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Bundle/Image/Info/XPM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/BMP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/GIF.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/ICO.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/JPEG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/PNG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/PPM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/SVG.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/SVG/XMLLibXMLReader.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/SVG/XMLSimple.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/TIFF.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/WBMP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/XBM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/Info/XPM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Image/TIFF.pm
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Bundle::Image::Info::Everything.3
 /usr/share/man/man3/Bundle::Image::Info::PNG.3
