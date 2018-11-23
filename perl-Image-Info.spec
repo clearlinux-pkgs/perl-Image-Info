@@ -4,7 +4,7 @@
 #
 Name     : perl-Image-Info
 Version  : 1.41
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libi/libimage-info-perl/libimage-info-perl_1.41-1.debian.tar.xz
