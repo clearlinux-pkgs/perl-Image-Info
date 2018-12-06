@@ -67,26 +67,26 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Bundle/Image/Info/Everything.pm
-/usr/lib/perl5/vendor_perl/5.28.1Bundle/Image/Info/PNG.pm
-/usr/lib/perl5/vendor_perl/5.28.1Bundle/Image/Info/SVG.pm
-/usr/lib/perl5/vendor_perl/5.28.1Bundle/Image/Info/XBM.pm
-/usr/lib/perl5/vendor_perl/5.28.1Bundle/Image/Info/XPM.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/BMP.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/GIF.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/ICO.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/JPEG.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/PNG.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/PPM.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/SVG.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/SVG/XMLLibXMLReader.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/SVG/XMLSimple.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/TIFF.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/WBMP.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/XBM.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/Info/XPM.pm
-/usr/lib/perl5/vendor_perl/5.28.1Image/TIFF.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Bundle/Image/Info/Everything.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Bundle/Image/Info/PNG.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Bundle/Image/Info/SVG.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Bundle/Image/Info/XBM.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Bundle/Image/Info/XPM.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/BMP.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/GIF.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/ICO.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/JPEG.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/PNG.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/PPM.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/SVG.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/SVG/XMLLibXMLReader.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/SVG/XMLSimple.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/TIFF.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/WBMP.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/XBM.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/Info/XPM.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Image/TIFF.pm
 
 %files dev
 %defattr(-,root,root,-)
