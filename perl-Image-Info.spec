@@ -4,11 +4,11 @@
 #
 Name     : perl-Image-Info
 Version  : 1.41
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.41.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libi/libimage-info-perl/libimage-info-perl_1.41-1.debian.tar.xz
-Summary  : 'Extract meta information from image files'
+Summary  : Extract meta information from image files
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -21,6 +21,7 @@ types of image files. The following file formats are supported:
 Summary: dev components for the perl-Image-Info package.
 Group: Development
 Provides: perl-Image-Info-devel = %{version}-%{release}
+Requires: perl-Image-Info = %{version}-%{release}
 
 %description dev
 dev components for the perl-Image-Info package.
@@ -31,7 +32,7 @@ dev components for the perl-Image-Info package.
 cd ..
 %setup -q -T -D -n Image-Info-1.41 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Image-Info-1.41/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Image-Info-1.41/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
