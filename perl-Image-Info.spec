@@ -4,12 +4,15 @@
 #
 Name     : perl-Image-Info
 Version  : 1.42
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
-Summary  : Extract meta information from image files
+Summary  : 'Extract meta information from image files'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Image-Info-perl = %{version}-%{release}
+Requires: perl(Image::Xbm)
+Requires: perl(Image::Xpm)
 BuildRequires : buildreq-cpan
 
 %description
@@ -21,14 +24,23 @@ Summary: dev components for the perl-Image-Info package.
 Group: Development
 Provides: perl-Image-Info-devel = %{version}-%{release}
 Requires: perl-Image-Info = %{version}-%{release}
-Requires: perl-Image-Info = %{version}-%{release}
 
 %description dev
 dev components for the perl-Image-Info package.
 
 
+%package perl
+Summary: perl components for the perl-Image-Info package.
+Group: Default
+Requires: perl-Image-Info = %{version}-%{release}
+
+%description perl
+perl components for the perl-Image-Info package.
+
+
 %prep
 %setup -q -n Image-Info-1.42
+cd %{_builddir}/Image-Info-1.42
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -64,6 +76,27 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
+
+%files dev
+%defattr(-,root,root,-)
+/usr/share/man/man3/Bundle::Image::Info::Everything.3
+/usr/share/man/man3/Bundle::Image::Info::PNG.3
+/usr/share/man/man3/Bundle::Image::Info::SVG.3
+/usr/share/man/man3/Bundle::Image::Info::XBM.3
+/usr/share/man/man3/Bundle::Image::Info::XPM.3
+/usr/share/man/man3/Image::Info.3
+/usr/share/man/man3/Image::Info::BMP.3
+/usr/share/man/man3/Image::Info::GIF.3
+/usr/share/man/man3/Image::Info::ICO.3
+/usr/share/man/man3/Image::Info::PPM.3
+/usr/share/man/man3/Image::Info::SVG.3
+/usr/share/man/man3/Image::Info::TIFF.3
+/usr/share/man/man3/Image::Info::WBMP.3
+/usr/share/man/man3/Image::Info::XBM.3
+/usr/share/man/man3/Image::Info::XPM.3
+
+%files perl
+%defattr(-,root,root,-)
 /usr/lib/perl5/vendor_perl/5.28.2/Bundle/Image/Info/Everything.pm
 /usr/lib/perl5/vendor_perl/5.28.2/Bundle/Image/Info/PNG.pm
 /usr/lib/perl5/vendor_perl/5.28.2/Bundle/Image/Info/SVG.pm
@@ -85,21 +118,3 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/lib/perl5/vendor_perl/5.28.2/Image/Info/XBM.pm
 /usr/lib/perl5/vendor_perl/5.28.2/Image/Info/XPM.pm
 /usr/lib/perl5/vendor_perl/5.28.2/Image/TIFF.pm
-
-%files dev
-%defattr(-,root,root,-)
-/usr/share/man/man3/Bundle::Image::Info::Everything.3
-/usr/share/man/man3/Bundle::Image::Info::PNG.3
-/usr/share/man/man3/Bundle::Image::Info::SVG.3
-/usr/share/man/man3/Bundle::Image::Info::XBM.3
-/usr/share/man/man3/Bundle::Image::Info::XPM.3
-/usr/share/man/man3/Image::Info.3
-/usr/share/man/man3/Image::Info::BMP.3
-/usr/share/man/man3/Image::Info::GIF.3
-/usr/share/man/man3/Image::Info::ICO.3
-/usr/share/man/man3/Image::Info::PPM.3
-/usr/share/man/man3/Image::Info::SVG.3
-/usr/share/man/man3/Image::Info::TIFF.3
-/usr/share/man/man3/Image::Info::WBMP.3
-/usr/share/man/man3/Image::Info::XBM.3
-/usr/share/man/man3/Image::Info::XPM.3
