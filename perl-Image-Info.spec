@@ -4,7 +4,7 @@
 #
 Name     : perl-Image-Info
 Version  : 1.42
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
 Summary  : 'Extract meta information from image files'
