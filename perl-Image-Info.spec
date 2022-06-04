@@ -4,7 +4,7 @@
 #
 Name     : perl-Image-Info
 Version  : 1.42
-Release  : 24
+Release  : 25
 URL      : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SR/SREZIC/Image-Info-1.42.tar.gz
 Summary  : 'Extract meta information from image files'
@@ -97,24 +97,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Bundle/Image/Info/Everything.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Bundle/Image/Info/PNG.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Bundle/Image/Info/SVG.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Bundle/Image/Info/XBM.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Bundle/Image/Info/XPM.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/BMP.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/GIF.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/ICO.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/JPEG.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/PNG.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/PPM.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/SVG.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/SVG/XMLLibXMLReader.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/SVG/XMLSimple.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/TIFF.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/WBMP.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/WEBP.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/XBM.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/Info/XPM.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Image/TIFF.pm
+/usr/lib/perl5/*
